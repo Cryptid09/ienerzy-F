@@ -26,7 +26,7 @@ const Sidebar = () => {
       {/* Sidebar */}
       <div
         className={`
-          fixed top-0 left-0 h-full w-64 bg-white text-gray-900 border-r shadow-lg z-50
+          fixed top-0 left-0 h-full w-72 sm:w-80 md:w-64 lg:w-72 bg-white text-gray-900 border-r shadow-lg z-50
           transform transition-transform duration-300 ease-in-out
           md:translate-x-0 md:static md:h-screen md:shadow-none
           ${open ? "translate-x-0" : "-translate-x-full"}
@@ -43,16 +43,18 @@ const Sidebar = () => {
         </div>
 
         {/* Brand */}
-        <div className="p-6 mt-4 text-2xl flex gap-3 font-bold border-b">iTarang <img className="w-8 h-8" src="/ienerzy.jpg"/> </div>
+        <div className="p-4 sm:p-6 mt-4 text-xl sm:text-2xl flex gap-3 font-bold border-b">
+          iTarang <img className="w-6 h-6 sm:w-8 sm:h-8" src="/ienerzy.jpg"/> 
+        </div>
 
         {/* Navigation */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <p className="text-xs font-semibold text-gray-500 mb-4">MAIN NAVIGATION</p>
-          <nav className="flex flex-col gap-4">
+          <nav className="flex flex-col gap-3 sm:gap-4">
             <NavLink
               to="/"
               className={({ isActive }) =>
-                `flex items-center gap-2 hover:text-gray-600 transition-colors ${
+                `flex items-center gap-2 hover:text-gray-600 transition-colors text-sm sm:text-base ${
                   isActive ? "font-semibold text-blue-600" : ""
                 }`
               }
@@ -64,7 +66,7 @@ const Sidebar = () => {
             <NavLink
               to="/leads"
               className={({ isActive }) =>
-                `flex items-center gap-2 hover:text-gray-600 transition-colors ${
+                `flex items-center gap-2 hover:text-gray-600 transition-colors text-sm sm:text-base ${
                   isActive ? "font-semibold text-blue-600" : ""
                 }`
               }
@@ -76,7 +78,7 @@ const Sidebar = () => {
             <NavLink
               to="/batteries"
               className={({ isActive }) =>
-                `flex items-center gap-2 hover:text-gray-600 transition-colors ${
+                `flex items-center gap-2 hover:text-gray-600 transition-colors text-sm sm:text-base ${
                   isActive ? "font-semibold text-blue-600" : ""
                 }`
               }
@@ -88,7 +90,7 @@ const Sidebar = () => {
             <NavLink
               to="/finance"
               className={({ isActive }) =>
-                `flex items-center gap-2 hover:text-gray-600 transition-colors ${
+                `flex items-center gap-2 hover:text-gray-600 transition-colors text-sm sm:text-base ${
                   isActive ? "font-semibold text-blue-600" : ""
                 }`
               }
@@ -100,9 +102,9 @@ const Sidebar = () => {
         </div>
 
         {/* Quick Stats */}
-        <div className="p-6">
+        <div className="p-4 sm:p-6">
           <p className="text-xs font-semibold text-gray-500 mb-4">QUICK STATS</p>
-          <ul className="space-y-2 text-sm">
+          <ul className="space-y-2 text-xs sm:text-sm">
             <li className="flex justify-between">
               <span>Active Batteries</span>
               <span className="text-blue-600 font-semibold">56</span>
